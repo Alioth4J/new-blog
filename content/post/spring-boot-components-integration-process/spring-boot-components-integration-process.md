@@ -7,6 +7,7 @@ image:
 categories:
     - Java
     - Spring
+    - Design patterns
 ---
 
 ## “通用”的来源——模板方法模式
