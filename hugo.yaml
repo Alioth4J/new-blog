@@ -206,19 +206,8 @@ menu:
           name: GitHub
           url: https://github.com/Alioth4J
           params:
-              icon: github
-        - identifier: mail
-          name: Mail
-          url: mailto://Alioth4J@proton.me
-          params:
-              icon: mail
+              icon: brand-github
               
-        # - identifier: location
-        #   name: Location
-        #   url: https://en.wikipedia.org/wiki/Hefei
-        #   params:
-        #       icon: location
-
 related:
     includeNewer: true
     threshold: 60
