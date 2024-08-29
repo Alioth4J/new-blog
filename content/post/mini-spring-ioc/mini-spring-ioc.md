@@ -1,8 +1,8 @@
 ---
-title: 手写 MiniSpring 之 IoC 容器
+title: 手写 MiniSpring 之 IoC
 description: Spring Framework 的设计与迭代
 date: 2024-08-24
-slug: mini-spring
+slug: mini-spring-ioc
 image: 
 categories:
     - Java
