@@ -9,6 +9,7 @@ categories:
     - 6.824
 ---
 
+> *檐上踏月客，屏息听完莫入迷*
 ## 介绍
 VMware 的论文《The Design of a Practical System for Fault-Tolerant Virtual Machines》中提出了一种以主备复制进行故障容错的系统设计，这个容错机制用于在出现单点故障等情况下保障系统的可用性
 ## 基础架构
