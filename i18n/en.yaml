@@ -1,0 +1,6 @@
+footer:
+    builtWith:
+        other: "{{ .ICP }}"
+
+    designedBy:
+        other: test
