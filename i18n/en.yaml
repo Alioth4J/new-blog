@@ -3,4 +3,4 @@ footer:
         other: "{{ .ICP }}"
 
     designedBy:
-        other: test
+        other: Theme {{ .Theme }} designed by {{ .DesignedBy }}
