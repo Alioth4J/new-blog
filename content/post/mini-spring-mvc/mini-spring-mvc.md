@@ -351,7 +351,7 @@ public class AnnotationConfigWebApplicationContext extends ClassPathXmlApplicati
         this(fileName, null);
     }
 
-    public AnnotationConfigWebAPplicationContext(String fileName, WebApplicationContext parentApplicationContext) {
+    public AnnotationConfigWebApplicationContext(String fileName, WebApplicationContext parentApplicationContext) {
         this.parentApplicationContext = parentApplicationContext;
         this.servletContext = parentApplicationContext.getServletContext();
         URL xmlPath = null;
@@ -537,10 +537,10 @@ public class RequestMappingHandlerMapping implements HandlerMapping {
                 e.printStackTrace();
             }
             Method[] methods = clz.getDeclaredMethods();
-            if(methods!=null){
-                for(Method method : methods){
+            if (methods!=null) {
+                for (Method method : methods) {
                     boolean isRequestMapping = method.isAnnotationPresent(RequestMapping.class);
-                    if (isRequestMapping){
+                    if (isRequestMapping) {
                         String methodName = method.getName();
                         String urlmapping = method.getAnnotation(RequestMapping.class).value();
                         this.mappingRegistry.getUrlMappingNames().add(urlmapping);
@@ -551,7 +551,6 @@ public class RequestMappingHandlerMapping implements HandlerMapping {
             }
         }
     }
-
 
     @Override
     public HandlerMethod getHandler(HttpServletRequest request) throws Exception {
