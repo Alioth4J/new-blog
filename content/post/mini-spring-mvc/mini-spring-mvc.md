@@ -95,11 +95,11 @@ public class DispatcherServlet extends HttpServlet {
 
     private List<String> packageNames = new ArrayList<>();
     private List<String> controllerNames = new ArrayList<>();
-    private Map<String,Class<?>> controllerClasses = new HashMap<>();
-    private Map<String,Object> controllerObjs = new HashMap<>();
+    private Map<String, Class<?>> controllerClasses = new HashMap<>();
+    private Map<String, Object> controllerObjs = new HashMap<>();
     private List<String> urlMappingNames = new ArrayList<>();
-    private Map<String,Object> mappingObjs = new HashMap<>();
-    private Map<String,Method> mappingMethods = new HashMap<>();
+    private Map<String, Object> mappingObjs = new HashMap<>();
+    private Map<String, Method> mappingMethods = new HashMap<>();
 
     // ...
 
@@ -182,8 +182,8 @@ public class DispatcherServlet extends HttpServlet {
             Class<?> clazz = this.controllerClasses.get(controllerName);
             Object obj = this.controllerObjs.get(controllerName);
             Method[] methods = clazz.getDeclaredMethods();
-            if(methods!=null){
-                for(Method method : methods){
+            if (methods != null) {
+                for (Method method : methods) {
                     boolean isRequestMapping = method.isAnnotationPresent(RequestMapping.class);
                     if (isRequestMapping){
                         String methodName = method.getName();
@@ -272,7 +272,7 @@ Spring 通过这个时序实现 MVC 的功能
 
 第一步，web.xml：
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <web-app xmlns="http://www.w3.org/2001/XMLSchema-instance"
          xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/nx/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
@@ -311,13 +311,12 @@ public interface WebApplicationContext extends ApplicationContext {
 
 }
 ```
-Listener 和 DispatcherServlet 中是两级 WebApplicationContext，因此用两个实现类 XmlWebApplicationContext 和 ApplicationConfigWebApplicationContext 分别与之对应  
+Listener 和 DispatcherServlet 中是两级 WebApplicationContext，因此用两个实现类 XmlWebApplicationContext 和 AnnotationConfigWebApplicationContext 分别与之对应  
 
 **这两个 WebApplicationContext 的实现类 `extends ClassPathXmlApplicationContext implements WebApplicationContext`，由此将 IoC 和 MVC 关联起来**  
 
 XmlWebApplicationContext:
 ```java
-
 public class XmlWebApplicationContext extends ClassPathXmlApplicationContext implements WebApplicationContext {
 
     private ServletContext servletContext;
@@ -339,7 +338,7 @@ public class XmlWebApplicationContext extends ClassPathXmlApplicationContext imp
 
 }
 ```
-ApplicationConfigWebApplicationContext：
+AnnotationConfigWebApplicationContext：
 ```java
 public class AnnotationConfigWebApplicationContext extends ClassPathXmlApplicationContext implements WebApplicationContext {
 
