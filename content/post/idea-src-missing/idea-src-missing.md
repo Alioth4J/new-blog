@@ -1,6 +1,6 @@
 ---
 title: IDEA 左侧项目目录消失问题 解决方案
-description: src 快回来
+description: src 快回来 😭
 date: 2024-09-18
 slug: idea-src-missing
 image: 
