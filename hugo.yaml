@@ -44,7 +44,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon: /new-blog/openduke.ico # in `static/favicon.ico` (`/` is necessary)
+    favicon: /new-blog/openduke.png # in `static/favicon.ico` (`/` is necessary)
 
     footer:
         since: 2023
