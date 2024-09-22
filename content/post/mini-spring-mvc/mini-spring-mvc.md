@@ -43,9 +43,9 @@ beans.xml：
 ```
 `ClassPathXmlResource`、`XmlConfigReader` 复用 IoC 容器中的同名组件  
 `MappingValue` 类似 `BeanDefinition`，`XmlConfigReader` 类似 `XmlBeanDefinitionReader`  
-`DispatcherServlet` 类似初始 IoC 中的 `ClassPathXmlAppllicationContext`  
+`DispatcherServlet` 类似初始 IoC 中的 `ClassPathXmlApplicationContext`  
 
-其中 `DispatcherServlet` 需要 extends javax.servlet.http.HttpServlet 并重写 init 方法  
+其中 `DispatcherServlet` 需要 `extends javax.servlet.http.HttpServlet` 并重写 `init` 方法  
 ## 增强 MVC：组件扫描和注解支持
 servlet.xml：
 ```xml
@@ -684,7 +684,7 @@ public class DispatcherServlet extends HttpServlet {
 - WebDataBinderFactory#createBinder 得到对应参数的 WebDataBinder  
 - WebDataBinder#bind 方法首先将 request 中的参数转换成一个 PropertyValues 对象，之后调用 BeanWrapperImpl#setPropertyValues 方法  
 - BeanWrapperImpl#setPropertyValues 中对每一个 propertyValues.getPropertyValues() 调用 setPropertyValue 方法  
-- BeanWrapperImpl#setPropertyValue 去获取 PropertyEditor，优先获取自定义 PropertyEditor ，不存在再区获取默认的，接着转换参数类型，并借助内部类 BeanPropertyHandler 通过反射读写参数的值  
+- BeanWrapperImpl#setPropertyValue 去获取 PropertyEditor，优先获取自定义 PropertyEditor ，不存在再去获取默认的，接着转换参数类型，并借助内部类 BeanPropertyHandler 通过反射读写参数的值  
 
 PropertyEditorRegistrySupport 中分别存储默认和自定义 PropertyEditor，构造器中初始化默认 PropertyEditor，用户可以通过 registerCustomEditor 方法注册自定义 PropertyEditor  
 ## 增强 MVC：处理返回结果
