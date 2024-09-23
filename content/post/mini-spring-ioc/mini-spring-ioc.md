@@ -335,13 +335,14 @@ public class XmlBeanDefinitionReader {
 
     public void loadBeanDefinitions(Resource resource) {
         while (resource.hasNext()) {
+            // 对应一整个 <bean> 标签
             Element element = (Element) resource.next();
-            // <bean>内的属性
+            // <bean> 内的属性
             String beanID = element.attributeValue("id");
             String beanClassName = element.attributeValue("class");
             BeanDefinition beanDefinition = new BeanDefinition(beanID, beanClassName);
 
-            // <bean>中嵌套的标签
+            // <bean> 中嵌套的标签
             // <constructor-arg>
             List<Element> constructorElements = element.elements("constructor-arg");
             ArgumentValues avs = new ArgumentValues();
@@ -404,7 +405,7 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
     }
 
     /**
-     * 激活IoC容器
+     * 激活 IoC 容器
      */
     public void refresh() {
         for (String beanName : beanDefinitionNames) {
@@ -803,7 +804,7 @@ public class ClassPathXmlApplicationContext {
 ```
 ## 接口隔离：拆分接口
 拆分出 `ListableBeanFactory`、`ConfigurableBeanFactory`，新增 `ConfigurableListableBeanFactory`  
-`AutowiraCapableBeanFactory` 改为接口，增加 `AbstrctAutowireCapableBeanFactory` 替代原有实现  
+`AutowireCapableBeanFactory` 改为接口，增加 `AbstractAutowireCapableBeanFactory` 替代原有实现  
 ## 扩展：更多支持
 - Environment
 - ApplicationEvent
