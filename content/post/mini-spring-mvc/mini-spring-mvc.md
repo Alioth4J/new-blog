@@ -41,7 +41,7 @@ beans.xml：
     </servlet-mapping>
 </web-app>
 ```
-`ClassPathXmlResource`、`XmlConfigReader` 复用 IoC 容器中的同名组件  
+`ClassPathXmlResource` 复用 IoC 容器中的同名组件  
 `MappingValue` 类似 `BeanDefinition`，`XmlConfigReader` 类似 `XmlBeanDefinitionReader`  
 `DispatcherServlet` 类似初始 IoC 中的 `ClassPathXmlApplicationContext`  
 
