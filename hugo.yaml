@@ -56,7 +56,7 @@ params:
 
     sidebar:
         emoji: ⌨️
-        subtitle: Do it better
+        subtitle: OPEN ALIOTH
         avatar:
             enabled: true
             local: true
