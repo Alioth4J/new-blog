@@ -2,7 +2,7 @@
 title: 面向对象设计（业务篇）
 description: public interface ObjectOrientedDesign4Biz
 date: 2024-10-17
-slug: oo-design
+slug: oo-design-biz
 image: 
 categories:
     - Java
