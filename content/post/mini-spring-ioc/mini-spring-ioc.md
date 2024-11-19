@@ -388,8 +388,7 @@ public class XmlBeanDefinitionReader {
 为了解决循环依赖问题，使用三级缓存（具体是第二级缓存解决了 setter 注入的循环依赖问题）：  
 第一级缓存：singletonObjects - 完全创建好的单例 Bean 实例  
 第二级缓存：earlySingletonObjects - 早期的未完全初始化（尚未填充属性）的 Bean 实例  
-第三级缓存：singletonFactories - 创建单例 Bean 的工厂对象  
-源码在 `org.springframework.beans.factory.support.DefaultSingletonBeanRegistry`
+第三级缓存：objectFactories - 创建 Bean 的工厂对象  
 
 在 MiniSpring 中，第三级缓存使用 `BeanDefinition + 反射` 直接创建 Bean  
 ```java
