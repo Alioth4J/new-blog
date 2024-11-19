@@ -519,10 +519,7 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
     }
 
     /**
-     * setter注入相关
-     * @param bd
-     * @param clz
-     * @param obj
+     * setter 注入相关
      */
     private void handleProperties(BeanDefinition bd, Class<?> clz, Object obj) {
         PropertyValues propertyValues = bd.getPropertyValues();
