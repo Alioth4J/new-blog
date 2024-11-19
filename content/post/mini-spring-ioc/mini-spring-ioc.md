@@ -175,7 +175,7 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
     public SimpleBeanFactory() {
     }
 
-    //getBean，容器的核心方法
+    // 容器的核心方法，暂时还没有使用三级缓存
     public Object getBean(String beanName) throws BeansException {
         // 先尝试从直接 singletons 中直接拿 Bean 实例
         Object singleton = this.getSingleton(beanName);
