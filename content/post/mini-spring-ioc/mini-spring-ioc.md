@@ -685,7 +685,7 @@ public class AutowiredAnnotationBeanPostProcessor implements BeanPostProcessor {
 }
 ```
 ### BeanFactory 家族
-原来的 SimpleBeanFactory 变为 AbstractBeanFactory，目的是把 postProcess 相关的两个方法作为抽象方法交给具体实现类实现：
+原来的 SimpleBeanFactory 变为 AbstractBeanFactory，目的是把 postProcess 相关的两个方法作为抽象方法交给具体实现类实现（模板方法模式）：
 ```java
 public abstract class AbstractBeanFactory {
 
