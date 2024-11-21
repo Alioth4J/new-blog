@@ -633,7 +633,7 @@ public class RequestMappingHandlerAdapter implements HandlerAdapter {
         Object objResult = null;
         try {
             objResult = method.invoke(obj);
-        } catch (IllegalAccessException | IllegalArgumentException| InvocationTargetException e) {
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
             e.printStackTrace();
         }
         try {
@@ -687,7 +687,7 @@ public class DispatcherServlet extends HttpServlet {
 PropertyEditorRegistrySupport 中分别存储默认和自定义 PropertyEditor，构造器中初始化默认 PropertyEditor，用户可以通过 registerCustomEditor 方法注册自定义 PropertyEditor  
 ## 增强 MVC：处理返回结果
 返回结果分为两种，视图和 @ResponseBody  
-增强处为 RequestMappingHandlerAdapter 中反射条用之后，判断 `@ResponseBody` 是否存在，进入对应逻辑  
+增强处为 RequestMappingHandlerAdapter 中反射调用之后，判断 `@ResponseBody` 是否存在，进入对应逻辑  
 ### @ResponseBody
 反射的返回值进行序列化，写入 response 中即可  
 ```java
