@@ -231,7 +231,7 @@ public class DispatcherServlet extends HttpServlet {
 
 }
 ```
-重写 doGet 方法，用于处理 Http Get 请求，从 HttpServletRequest 中取得请求路径，到集合中取得对应的对象，进行反射调用，最后把结果写会 HttpServletResponse：
+重写 doGet 方法，用于处理 Http Get 请求，从 HttpServletRequest 中取得请求路径，到集合中取得对应的对象，进行反射调用，最后把结果写回 HttpServletResponse：
 ```java
 public class DispatcherServlet extends HttpServlet {
 
