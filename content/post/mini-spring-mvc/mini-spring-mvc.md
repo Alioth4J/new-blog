@@ -263,7 +263,7 @@ public class DispatcherServlet extends HttpServlet {
 
 }
 ```
-## JavaEE 规范：Servlet 服务器的时序
+## Servlet 规范：服务器的启动时序
 1. 读取 web.xml 中的配置
 2. 启动 Listener
 3. 启动 DispatcherServlet
@@ -366,9 +366,7 @@ public class AnnotationConfigWebApplicationContext extends ClassPathXmlApplicati
         this.beanFactory = bf;
         this.beanFactory.setParent(this.parentApplicationContext.getBeanFactory());
         loadBeanDefinitions(controllerNames);
-        if (true) {
-            refresh();
-        }
+        refresh();
     }
 
     private void loadBeanDefinitions(List<String> controllerNames) {
