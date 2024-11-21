@@ -535,7 +535,7 @@ public class RequestMappingHandlerMapping implements HandlerMapping {
                 e.printStackTrace();
             }
             Method[] methods = clz.getDeclaredMethods();
-            if (methods!=null) {
+            if (methods != null) {
                 for (Method method : methods) {
                     boolean isRequestMapping = method.isAnnotationPresent(RequestMapping.class);
                     if (isRequestMapping) {
@@ -571,14 +571,14 @@ public class RequestMappingHandlerMapping implements HandlerMapping {
 ```java
 public class HandlerMethod {
 
-    private  Object bean;
-    private  Class<?> beanType;
-    private  Method method;
-    private  MethodParameter[] parameters;
-    private  Class<?> returnType;
-    private  String description;
-    private  String className;
-    private  String methodName;
+    private Object bean;
+    private Class<?> beanType;
+    private Method method;
+    private MethodParameter[] parameters;
+    private Class<?> returnType;
+    private String description;
+    private String className;
+    private String methodName;
     
     public HandlerMethod(Method method, Object obj) {
         this.setMethod(method);
