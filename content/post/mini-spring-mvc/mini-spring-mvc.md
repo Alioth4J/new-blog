@@ -772,7 +772,7 @@ public class RequestMappingHandlerAdapter {
         } else {
             if (returnObj instanceof ModelAndView) {
                 mav = (ModelAndView) returnObj;
-            } else if(returnObj instanceof String) {
+            } else if (returnObj instanceof String) {
                 String viewName = (String) returnObj;
                 mav = new ModelAndView();
                 mav.setViewName(viewName);
@@ -796,7 +796,7 @@ public class DispatcherServlet extends HttpServlet {
         }
         String path = "/" + mv.getViewName() + ".jsp";
         request.getRequestDispatcher(path).forward(request, response);
-  }
+    }
 
 }
 ```
